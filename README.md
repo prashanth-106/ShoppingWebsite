@@ -1,1 +1,2 @@
 # ShoppingWebsite
+![screenshot](screenshot.png)
