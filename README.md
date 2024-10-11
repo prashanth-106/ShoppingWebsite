@@ -1,2 +1,3 @@
 # ShoppingWebsite
-![screenshot](screenshot.png)
+sample imsges
+![screenshot](ShopingWebsite/images/Screenshot (113).png)
