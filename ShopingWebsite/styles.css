@@ -1,0 +1,137 @@
+
+#cart {
+    
+    padding-bottom: 1cm;
+    margin-left:-1cm;
+    margin-right:-1cm;
+    margin-top:-1cm;
+    padding-top: 2cm;
+    padding-bottom: 2cm;
+    height: 5mm;
+   }
+.iconbutton{
+    
+    border-radius: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    cursor: pointer;
+  }
+  .menu{
+    border-radius:15px;
+    height: 30px;
+  }
+.icon-image{
+    height: 100px;
+    width: 100px;
+}
+.icon-image:hover{
+    height: 120px;
+    width: 120px;
+}
+
+.topmenu {
+    color: rgb(71, 71, 71);
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.topmenu:hover {
+    color: rgb(32, 28, 28);
+    font-weight: bolder;
+    text-decoration: underline;
+    height: 30px;
+    /* Add the styles here */
+}
+
+.shopping-app {
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color:#000;
+    background-color: #fafafa;
+}
+
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    
+}
+header  {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 60px;
+    
+}
+
+.mobile-item, .suggestion-item, .fashion-item , .electronics-item, .toys-item, .homefurnitures-item, .appliances-item, .offer-item{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-height: 490px;
+    width: 280px;
+}
+
+
+.price {
+    font-weight: bold;
+}
+
+.shopping-cart{
+    flex: 1;
+}
+ .mobiles,.suggestions,.fashion,.electronics,.toys,.homefurnitures,.appliances, .offers {
+    display: flex;
+}
+
+.bottom-cart {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+.image-class{
+    max-width: 240px;
+    height: 300px;
+}
+.image-class:hover{
+    max-width: 250px;
+    height: 310px;
+}
+.info{
+    scroll-margin-bottom: 0px;
+}
+.cart{
+    position: fixed;
+ margin-top: 1000px;
+ margin-left: 1900px;
+}

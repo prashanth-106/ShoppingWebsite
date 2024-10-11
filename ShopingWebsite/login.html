@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping App</title>
+</head>
+<body ng-app="shoppingApp">
+    <center>
+
+    <div class="login-div">
+        <header>
+            <img width="50" height="50" src="images\shopIcon.jpeg" alt="">
+            <h1>Shopping App</h1>
+            <p>Welcome to our online store!</p>
+        </header>
+        <div class="login-div">
+            <div ng-controller="UserController" class="main-content">
+                <div ng-show="!userAuthenticated">
+                    <center>
+                        <h1>Login</h1>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" ng-model="username"><br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" ng-model="password"><br>
+                        <button ng-click="login()"><b>Login</b></button>
+                        <p ng-show="loginFailed" style="color: red;">Invalid username or password</p>
+                    </center>
+                </div>
+                <div ng-show="userAuthenticated" class="loginclass">
+                    <center><br><br>
+                        <p>Welcome, {{ username }}!</p>
+                        <br><br>
+                        <button><a text-decoration="none" href="index.html">OK</a></button><br><br><br><br>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Shopping App</p>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var shoppingApp = angular.module('shoppingApp', []);
+        shoppingApp.controller('UserController', function ($scope) {
+            $scope.userAuthenticated = false;
+            $scope.username = '';
+            $scope.password = '';
+            $scope.loginFailed = false;
+            var validCredentials = {
+                username: 'prashanth',
+                password: 'prashanth'
+            };
+            $scope.login = function () {
+                if ($scope.username === validCredentials.username && $scope.password === validCredentials.password) {
+                    $scope.userAuthenticated = true;
+                    $scope.loginFailed = false;
+                } else {
+                    $scope.userAuthenticated = false;
+                    $scope.loginFailed = true;
+                }
+            };
+        });
+    </script>
+    </center>
+</body>
+</html>

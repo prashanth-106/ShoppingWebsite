@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="shoppingApp">
+    <div class="shopping-app">
+        <header>
+            <h1>Shopping App</h1>
+            <p>Welcome to our online store!</p>
+            <div>
+                <button class="menu"><a class="topmenu" href="#suggestions">Suggestions</a></button>
+                <button class="menu"><a class="topmenu" href="#mobiles">Mobiles</a></button>
+                <button class="menu"><a class="topmenu" href="#fashion">Fashion</a></button>
+                <button class="menu"><a class="topmenu" href="#electronics">Electronics</a></button>
+                <button class="menu"><a class="topmenu" href="#homefurnitures">Home & Furniture</a></button>
+                <button class="menu"><a class="topmenu" href="#appliances">Appliances</a></button>
+                <button class="menu"><a class="topmenu" href="#toys">Toys</a></button>
+                <button class="menu"><a class="topmenu" href="#offers">offers</a></button>
+                <button class="menu"><a text-decoration="none" font-size="10px" href="login.html">Logout</a></button>
+            </div>
+        </header>
+        <div ng-controller="ProductController" class="main-content">
+            <section id="suggestions">
+                <br><br><br><br><br><br><br><br>
+                <center>
+                    <h1>Suggestions</h1>
+                </center>
+                <div class="suggestions">
+                    <div class="suggestion-item" ng-repeat="suggestion in suggestions">
+                        <img class="image-class" src="{{ suggestion.image }}" alt="{{ suggestion.name }}">
+                        <div class="info">
+                            <p>{{ suggestion.name }}</p>
+
+                            <p>{{suggestion.description}}</p>
+                            <p class="price">&#8377; {{ suggestion.price }}</p>
+                            <button ng-click="addToCart(suggestion)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="mobiles">
+                <br><br><br><br><br><br><br><br>
+                <center>
+                    <h2>Mobiles</h2>
+                </center>
+                <div class="mobiles">
+                    <div class="mobile-item" ng-repeat="mobile in mobiles">
+                        <img class="image-class" src="{{ mobile.image }}" alt="{{ mobile.name }}">
+                        <div class="info">
+                            <p>{{ mobile.name }}</p>
+                            <p class="price">&#8377; {{ mobile.price }}</p>
+                            <button ng-click="addToCart(mobile)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="fashion">
+                <br><br><br><br><br><br><br><br>
+                <center>
+                    <h2>Fashion</h2>
+                </center>
+                <div class="fashion">
+                    <div class="fashion-item" ng-repeat="fashion in fashions">
+                        <img class="image-class" src="{{ fashion.image }}" alt="{{ fashion.name }}">
+                        <div class="info">
+                            <p>{{ fashion.name }}</p>
+                            <p class="price">&#8377; {{ fashion.price }}</p>
+                            <button ng-click="addToCart(fashion)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="electronics">
+                <br><br><br><br><br><br><br><br>
+                <center>
+                    <h2>Electronics</h2>
+                </center>
+                <div class="electronics">
+                    <div class="electronics-item" ng-repeat="electronic in electronics">
+                        <img class="image-class" src="{{ electronic.image }}" alt="{{ electronic.name }}">
+                        <div class="info">
+                            <p>{{ electronic.name }}</p>
+                            <p class="price">&#8377; {{ electronic.price }}</p>
+                            <button ng-click="addToCart(electronic)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="homefurnitures">
+                <br><br><br><br><br><br><br><br>
+                <center>
+                    <h2>Home & Furniture</h2>
+                </center>
+                <div class="homefurnitures">
+                    <div class="homefurnitures-item" ng-repeat="homefurniture in homefurnitures">
+                        <img class="image-class" src="{{ homefurniture.image }}" alt="{{ homefurniture.name }}">
+                        <div class="info">
+                            <p>{{ homefurniture.name }}</p>
+                            <p class="price">&#8377; {{ homefurniture.price }}</p>
+                            <button ng-click="addToCart(homefurniture)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="appliances">
+                <br><br><br><br><br><br><br><br>
+                <center>
+                    <h2>Appliances</h2>
+                </center>
+                <div class="appliances">
+                    <div class="appliances-item" ng-repeat="appliance in appliances">
+                        <img class="image-class" src="{{ appliance.image }}" alt="{{ appliance.name }}">
+                        <div class="info">
+                            <p>{{ appliance.name }}</p>
+                            <p class="price">&#8377; {{ appliance.price }}</p>
+                            <button ng-click="addToCart(appliance)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="toys">
+                <br><br><br><br><br><br><br><br>
+                <center>
+                    <h2>Toys</h2>
+                </center>
+                <div class="toys">
+                    <div class="toys-item" ng-repeat="toy in toys">
+                        <img class="image-class" src="{{ toy.image }}" alt="{{ toy.name }}">
+                        <div class="info">
+                            <p>{{ toy.name }}</p>
+                            <p class="price">&#8377; {{ toy.price }}</p>
+                            <button ng-click="addToCart(toy)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="offers">
+                <br><br><br><br><br><br><br><br>
+                <center>
+                    <h2>Special Offers</h2>
+                </center>
+                <div class="offers">
+
+                    <div class="offer-item" ng-repeat="offer in offers">
+                        <img class="image-class" src="{{ offer.image }}" alt="{{ offer.name }}">
+                        <div class="info">
+                            <p>{{ offer.name }}</p>
+
+                            <p>{{offer.description}}</p>
+                            <p class="price">&#8377; {{ offer.price }}</p>
+                            <button ng-click="addToCart(offer)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="cart">
+                <center>
+                    <div class="shopping-cart">
+                        <h2><br>Shopping Cart</h2>
+                        <table border="1px">
+                            <tr ng-show="cart.length !== 0">
+                                <td width="200px">
+                                    <center><b>Item name</b></center>
+                                </td>
+                                <td width="200px">
+                                    <center><b>Quantity</b></center>
+                                </td>
+                                <td width="200px">
+                                    <center><b>Rate</b></center>
+                                </td>
+                                <td width="200px">
+                                    <center><b>Price</b></center>
+                                </td>
+                            <tr>
+                            <tr ng-repeat="item in cart">
+                                <td width="200px">
+                                    <center>{{ item.name }}</center>
+                                </td>
+                                <td width="200px">
+                                    <center>{{ item.quantity }}</center>
+                                </td>
+                                <td width="200px">
+                                    <center>{{item.price}}</center>
+                                </td>
+                                <td width="200px">
+                                    <center>&#8377; {{ item.price * item.quantity}}</center>
+                                </td>
+                                <td><button ng-click="removeItem($index)">Remove</button></td>
+
+                        </table>
+                        <p ng-show="cart.length === 0">Your cart is empty.</p>
+                        <p ng-show="cart.length !== 0"><b>Total: &#8377; {{ getTotalPrice() }}</b></p>
+                        <br>
+                        <hr><br>
+                        <form ng-show="cart.length !== 0" ng-submit="placeOrder()">
+                            <table border="1px">
+                                <tr>
+                                    <td colspan="2"><b>
+                                            <center>Enter delivery details</center>
+                                        </b></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Phone Number : </td>
+                                    <td><input maxlength="10" type="text" ng-model="pnum" required></td>
+                                </tr>
+                                <tr>
+                                    <td>email : </td>
+                                    <td><input type="email" ng-model="email" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Address : </td>
+                                    <td><input type="text" ng-model="address" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Total : </td>
+                                    <td>
+                                        <div>
+                                            <p ng-show="cart.length !== 0">Total: &#8377; {{ getTotalPrice() }}</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Payment method : </td>
+                                    <td><select>
+                                            <option>Select option</option>
+                                            <option>Cash on delivery</option>
+                                            <option>Credit or Debit card</option>
+                                            <option>UPI</option>
+                                        </select>
+                                        </select></td>
+                                </tr>
+
+                            </table><br>
+                            <button type="submit">Place Order</button>
+                        </form>
+                    </div>
+
+                </center>
+            </section>
+            <div class="iconbutton">
+                <a href="#cart">
+                    <img class="icon-image" src="images\cart.png" alt="">
+                </a>
+            </div>
+
+        </div>
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer>
+            <p>&copy; 2024 Shopping App</p>
+        </footer>
+
+    </div>
+
+    <script src="index.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
